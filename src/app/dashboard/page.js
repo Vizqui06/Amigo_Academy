@@ -9,7 +9,7 @@ import { BookOpen, TrendingUp, Award, Clock, Target, Zap, ArrowRight } from 'luc
 export default function Dashboard() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [enrolledCourses, setEnrolledCourses] = useState<any[]>([]);
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({
     totalCourses: 0,
@@ -24,7 +24,7 @@ export default function Dashboard() {
     } else if (status === 'authenticated') {
       fetchEnrolledCourses();
     }
-  }, [status]);
+  }, [status, router]);
 
   const fetchEnrolledCourses = async () => {
     try {
@@ -35,7 +35,7 @@ export default function Dashboard() {
         setEnrolledCourses(data.courses);
         setStats({
           totalCourses: data.courses.length,
-          completedCourses: data.courses.filter((c: any) => c.progress === 100).length,
+          completedCourses: data.courses.filter(c => c.progress === 100).length,
           hoursLearned: data.courses.length * 12,
           currentStreak: 5,
         });
