@@ -6,13 +6,13 @@ import CourseCard from '@/components/CourseCard';
 import { Search, Filter, BookOpen, Sparkles } from 'lucide-react';
 
 export default function CoursesPage() {
-  const [courses, setCourses] = useState<any[]>([]);
-  const [filteredCourses, setFilteredCourses] = useState<any[]>([]);
+  const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Math', 'Programming', 'Science', 'Languages'];
+  const categories = ['All', 'Math', 'Programming', 'Science', 'Languages', 'Engineering', 'Design'];
 
   useEffect(() => {
     fetchCourses();
