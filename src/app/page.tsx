@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
 import { ArrowRight, BookOpen, Users, Trophy, Star, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -39,8 +38,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
-      <Navbar />
-      
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center overflow-hidden">
         {/* Animated Background */}
@@ -187,23 +184,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-              <BookOpen className="text-white" size={24} />
-            </div>
-            <span className="text-2xl font-bold">Amigo Academy</span>
-          </div>
-          <p className="text-gray-400">© 2024 Amigo Academy. All rights reserved.</p>
-          <div className="flex justify-center space-x-6 mt-4">
-            <Link href="/team" className="text-gray-400 hover:text-white transition">Team</Link>
-            <Link href="/contact" className="text-gray-400 hover:text-white transition">Contact</Link>
-            <Link href="/courses" className="text-gray-400 hover:text-white transition">Courses</Link>
-          </div>
-        </div>
-      </footer>
+
 
       <style jsx>{`
         @keyframes fade-in-up {

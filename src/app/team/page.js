@@ -9,7 +9,7 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+
       
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-4 text-center">Nuestro Equipo</h1>

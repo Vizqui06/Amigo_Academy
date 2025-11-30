@@ -54,7 +54,7 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
-      <Navbar />
+
       
       {/* Header Section */}
       <div className="relative pt-32 pb-20 overflow-hidden">
