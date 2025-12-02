@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Users, Trophy, Star } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import MotivationalQuote from '@/components/MotivationalQuote';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -44,7 +45,7 @@ export default function Home() {
               Learn Without <br />
               <span className="text-blue-400">Limits</span>
             </h1>
-
+            <MotivationalQuote />
             <p className="text-lg text-gray-300 leading-relaxed">
               Your future starts here. Access world-class courses taught by industry experts. Transform your career with skills that matter.
             </p>

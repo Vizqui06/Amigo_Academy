@@ -1,9 +1,9 @@
 'use client';
-
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { BookOpen, Clock, Users, Star, TrendingUp, Zap } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 interface CourseCardProps {
   course: {
@@ -38,6 +38,11 @@ export default function CourseCard({ course, enrolled = false, onEnroll }: Cours
       });
       const data = await response.json();
       if (data.success) {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
         alert('Successfully enrolled!');
         if (onEnroll) onEnroll();
         router.push('/dashboard');
