@@ -1,8 +1,12 @@
-import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const handler = NextAuth({
+/*
+  Tus opciones de NextAuth, copiadas desde tu archivo original.
+  NO importa que no tengas el handler aquí.
+*/
+
+export const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -15,42 +19,17 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        // Aquí va tu lógica de autenticación
-        // Por ejemplo, verificar contra tu base de datos
         if (credentials?.email && credentials?.password) {
-          // Ejemplo simplificado - reemplaza con tu lógica real
-          const user = {
+          return {
             id: "1",
             email: credentials.email,
-            name: "Usuario"
+            name: "Usuario",
           };
-          return user;
         }
         return null;
       }
     })
   ],
-  pages: {
-    signIn: "/auth/signin",
-  },
-  session: {
-    strategy: "jwt",
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (session?.user) {
-        session.user.id = token.id;
-      }
-      return session;
-    },
-  },
+  session: { strategy: "jwt" },
   secret: process.env.NEXTAUTH_SECRET,
-});
-
-export { handler as GET, handler as POST };
+};

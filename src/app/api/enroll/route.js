@@ -4,10 +4,11 @@ import User from '@/models/User';
 import Course from '@/models/Course';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]/route';
+import { auth } from "../auth/[...nextauth]/route";
 
 export async function POST(req) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(auth);
     
     if (!session) {
       return NextResponse.json(

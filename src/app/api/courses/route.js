@@ -3,6 +3,9 @@ import connectDB from '@/lib/mongodb';
 import Course from '@/models/Course';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]/route';
+import { auth } from "../auth/[...nextauth]/route";
+
+
 
 // GET - Obtener todos los cursos
 export async function GET(req) {
@@ -25,7 +28,7 @@ export async function GET(req) {
 // POST - Crear nuevo curso (solo admin)
 export async function POST(req) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(auth);
     
     if (!session || session.user.role !== 'admin') {
       return NextResponse.json(

@@ -3,6 +3,7 @@ import connectDB from '@/lib/mongodb';
 import Contact from '@/models/Contact';
 import nodemailer from 'nodemailer';
 
+
 // Configurar transportador de email
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST || 'smtp.gmail.com',
