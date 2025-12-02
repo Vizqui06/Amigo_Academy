@@ -18,7 +18,6 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Navbar />
 
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-white text-center">

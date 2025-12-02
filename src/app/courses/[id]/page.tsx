@@ -180,7 +180,6 @@ export default function CoursePage(): JSX.Element {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Navbar />
 
       <div className="container mx-auto px-4 py-16 space-y-8">
         <button

@@ -18,7 +18,6 @@ type Enrollment = {
     _id: string;
     title: string;
     description: string;
-    // otros campos que uses
   };
   progress: number;
 };

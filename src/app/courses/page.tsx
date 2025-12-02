@@ -10,7 +10,6 @@ type Course = {
   title: string;
   description: string;
   category: string;
-  // añade otros campos que uses
 };
 
 export default function CoursesPage() {
@@ -150,7 +149,7 @@ export default function CoursesPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredCourses.map(course => (
-                <CourseCard key={course._id} course={course} />
+                <CourseCard key={course._id} course={course} className="bg-gray-800 text-gray-100" />
               ))}
             </div>
           </>
