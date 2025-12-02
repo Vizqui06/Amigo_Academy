@@ -1,10 +1,6 @@
+// src/lib/authOptions.js
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-
-/*
-  Tus opciones de NextAuth, copiadas desde tu archivo original.
-  NO importa que no tengas el handler aquí.
-*/
 
 export const authOptions = {
   providers: [
@@ -19,17 +15,38 @@ export const authOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
+        // TU LÓGICA REAL DE BASE DE DATOS VA AQUÍ
         if (credentials?.email && credentials?.password) {
-          return {
+          const user = {
             id: "1",
             email: credentials.email,
             name: "Usuario",
           };
+          return user;
         }
         return null;
       }
     })
   ],
-  session: { strategy: "jwt" },
+  pages: {
+    signIn: "/auth/signin", // Tu página personalizada
+  },
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session?.user) {
+        session.user.id = token.id;
+      }
+      return session;
+    },
+  },
   secret: process.env.NEXTAUTH_SECRET,
 };

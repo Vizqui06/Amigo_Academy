@@ -3,12 +3,11 @@ import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 import Course from '@/models/Course';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../auth/[...nextauth]/route';
-import { auth } from "../auth/[...nextauth]/route";
+import { authOptions } from '@/lib/authOptions'; // <--- CAMBIO AQUÍ
 
 export async function POST(req) {
   try {
-    const session = await getServerSession(auth);
+    const session = await getServerSession(authOptions);
     
     if (!session) {
       return NextResponse.json(

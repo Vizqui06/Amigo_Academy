@@ -2,11 +2,11 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../auth/[...nextauth]/route';
-import { auth } from "../auth/[...nextauth]/route";
+import { authOptions } from '@/lib/authOptions'; // <--- CAMBIO AQUÍ
+
 export async function PUT(req) {
   try {
-    const session = await getServerSession(auth);
+    const session = await getServerSession(authOptions);
     
     if (!session) {
       return NextResponse.json(

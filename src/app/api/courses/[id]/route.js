@@ -6,6 +6,7 @@ export async function GET(req, { params }) {
   try {
     await connectDB();
     
+    // El 'params.id' viene de la URL (ej: /api/courses/12345)
     const course = await Course.findById(params.id)
       .populate('instructor', 'name email image');
     
