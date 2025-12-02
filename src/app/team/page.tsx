@@ -22,10 +22,10 @@ export default function TeamPage() {
 
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-white text-center">
-          Nuestro Equipo
+          Our Team
         </h1>
         <p className="text-center text-gray-300 mb-12 max-w-xl mx-auto">
-          Conoce a los expertos que hacen posible tu aprendizaje
+          Meet the developers that make your learning possible.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">

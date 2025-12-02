@@ -49,3 +49,26 @@ Result:
 --------------------------------
 # Important
 - I create the devs log later so if there are blank spaces is because the late actualizations of it.
+
+--------------------------------
+
+# Date: 9/11/2025
+# Project / Module: Change of Repository
+## Goals for today
+
+## Task completed
+- 
+
+## Use of Gen AI
+
+## What I learned
+- 
+
+## Challenges
+- 
+
+## Resources Used
+- 
+
+## Personal Reflection
+- 

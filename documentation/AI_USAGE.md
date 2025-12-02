@@ -31,6 +31,10 @@ AI helped us to manually redeploy and update Render and Cloud variables
 A similar thing happened with some of our .env.local variables to be able to run the project correctly.
 
 
+Finally some files such as
+"testMongoDB.js" and "seedComplete.js" were created on it's totality by AI with the sole purpose of working as a debugger to test the MongoDB Database, and if it was working propertly. 
+
+
 FRONTEND
 
 AI Usage Report: Amigo's Academy Project
