@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import Navbar from '@/components/Navbar';
 import { User, Mail, MessageSquare } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export default function ContactPage() {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
@@ -42,62 +42,65 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <h1 className="text-4xl font-bold mb-8 text-center">Contáctanos</h1>
-          
-          <div className="space-y-6">
+    <div className="min-h-screen bg-gray-900 text-gray-100">
+      <Navbar />
+
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl lg:text-4xl font-bold mb-8 text-white text-center">
+            Contact Us
+          </h1>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-200 font-semibold mb-2">
                 <User className="inline mr-2" size={20} />
-                Nombre
+                Name
               </label>
               <input
                 type="text"
                 value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                onChange={e => setFormData({ ...formData, name: e.target.value })}
+                className="w-full px-4 py-3 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-200 font-semibold mb-2">
                 <Mail className="inline mr-2" size={20} />
-                Correo Electrónico
+                Email
               </label>
               <input
                 type="email"
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                onChange={e => setFormData({ ...formData, email: e.target.value })}
+                className="w-full px-4 py-3 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-200 font-semibold mb-2">
                 <MessageSquare className="inline mr-2" size={20} />
-                Mensaje
+                Message
               </label>
               <textarea
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+                onChange={e => setFormData({ ...formData, message: e.target.value })}
+                className="w-full px-4 py-3 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition h-32"
                 required
               />
             </div>
 
             <button
-              onClick={handleSubmit}
+              type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition disabled:opacity-50"
+              className="w-full bg-blue-500 text-white py-3 rounded-lg font-bold hover:bg-blue-600 transition disabled:opacity-50"
             >
-              {loading ? 'Enviando...' : 'Enviar Mensaje'}
+              {loading ? 'Sending...' : 'Send Message'}
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

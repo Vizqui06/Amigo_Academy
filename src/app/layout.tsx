@@ -23,7 +23,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={inter.className}>
         <Providers>
           <Navbar />
-          {children}
+            <main className="pt-14"> {/* <-- Agregado padding-top */}
+              {children}
+            </main>
           <Footer />
         </Providers>
       </body>
