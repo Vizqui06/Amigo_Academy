@@ -76,23 +76,50 @@ consult real documentations before asking AI to help me out. I could had had a b
 
 --------------------------------
 
-# Date: 9/11/2025
-# Project / Module: Change of Repository
+# Date: 28/11/2025
+# Project / Module: Course imp. and APIs
 ## Goals for today
+ - Enhance the courses section and courses themselves.
 
 ## Task completed
-- 
+- Enhanced courses by makking them more enjoyable to the view and make them show more content and adding more descriptions.
 
 ## Use of Gen AI
+ - Ask how to make them atractive and beautiful to the user (frontend) and making AI judge the backend implementation we used for it.
 
 ## What I learned
-- 
+- The difficulties that takes creating a beautiful page section than just making them functional but look like a 80's frontend.
 
 ## Challenges
-- 
+- Keeping the courses functional while making them look pretty.
 
 ## Resources Used
-- 
+- Online documentation, YouTube guides and AI suggestions.
 
 ## Personal Reflection
-- 
+- Frontend is tedious when trying to apply it in a new environment such as React.
+
+
+
+# Date: 2/12/2025
+# Project / Module: Course imp. and APIs
+## Goals for today
+ - Implementation of 3rd party API (confetti) and REST API (motivational quote)
+
+## Task completed
+- Adding two simple APIs ASAP because we were running out of time. 
+
+## Use of Gen AI
+ - Ask AI for two simple and quick-implementation APIs
+
+## What I learned
+- It is not that complicated to implement them, just choose a well API takes time.
+
+## Challenges
+- Seeing where and how I have to implement them in the files. Took me too much time for the task that it is.
+
+## Resources Used
+- AI to select for me good and free APIs
+
+## Personal Reflection
+- I had to do a chack list for avoiding this types of rush.
